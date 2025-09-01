@@ -1,0 +1,26 @@
+.navbar{
+    width: 100%;
+    background-color: #fff;
+    padding: 8px;
+    position: relative;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.gmailmenu{
+    width: 238px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-left: 9px;
+}
+#menuicon{
+    padding: 5px;
+    cursor: pointer;
+}
+#menuicon:hover{
+    background-color: rgb(201, 201, 202);
+    border-radius: 50%;
+}

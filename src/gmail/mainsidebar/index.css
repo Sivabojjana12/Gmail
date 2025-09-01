@@ -1,0 +1,91 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    /* gap: 1px; */
+    width: 250px;
+    border-right: 0.1px solid #ddd;
+    height: 100%;
+    background-color: #fff;
+    
+    /* scrollbar-width: thin;
+    scrollbar-color: gray transparent; */
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: width 0.1s ease;
+}
+.compose-button{
+    background-color: transparent;
+    padding: 9px;
+}
+
+.compose-button button{
+    background-color: #c2e7ff;
+    color: black;
+    font-weight: 600;
+    text-transform: none;
+    padding: 28px 20px;
+    border-radius: 16px;
+}
+.sidebar .MuiListItemIcon-root {
+  
+  color: rgb(57, 57, 57);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.sidebar .MuiListItemText-root .MuiTypography-root {
+  font-size: .875rem; 
+  font-family:  "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: none;
+  color: rgb(32,33,36);
+}
+.sidebar.open { 
+  width: 250px; 
+}
+.sidebar.closed {
+  width: 72px;                 
+  transform: none !important;  
+}
+
+.sidebar.closed .compose-button button {
+  width: 48px;
+  height: 48px;
+  min-width: 0;
+  padding: 0;
+  border-radius: 12px;
+  background-color: #c2e7ff;
+  color: #000;
+  font-size: 0;                
+}
+.sidebar.closed .compose-button button .MuiButton-startIcon { 
+  margin: 0; 
+}
+
+.sidebar .MuiListItemButton-root {
+  border-radius: 16px;
+  margin: 1px 3px;
+  size: 13px;
+   /* min-width: 40px;  */
+   padding: 5px 15px;
+}
+
+.sidebar.closed .MuiListItemIcon-root {
+  min-width: 0;
+  justify-content: center;
+  padding-left: 0;
+}
+
+
+.sidebar.closed .MuiListItemText-root { 
+    display: none;
+ }
+
+
+.sidebar.closed .MuiListItemIcon-root { 
+    padding-left: 0 !important; 
+}
+.sidebar-list {
+  overflow-y: auto;
+  overflow-x: hidden;
+}

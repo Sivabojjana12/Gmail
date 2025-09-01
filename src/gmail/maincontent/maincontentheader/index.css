@@ -1,0 +1,12 @@
+.leftside{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.maincontentheader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+

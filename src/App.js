@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Mainnavebar from "./gmail/mainnavebar";
+import Sidebar from "./gmail/mainsidebar";
+import Rightsidemenu from "./gmail/rightsidemenu";
+import "./App.css"
+import Maincontentbody from "./gmail/maincontent/maincontentbody/maincontentbody";
+
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+  const onMenuClick = () => {
+    setIsOpen((prev) => !prev);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Mainnavebar onMenuClick={onMenuClick} />
+      <div class="main-container">
+        <Sidebar isOpen={isOpen} />
+        <div style={{ flex: 1 }}><Maincontentbody/></div>
+        <Rightsidemenu />
+      </div>
     </div>
   );
 }

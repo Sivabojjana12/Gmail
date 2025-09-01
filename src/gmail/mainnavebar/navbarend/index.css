@@ -1,0 +1,14 @@
+.navbarend{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.contactsupporticon,.settingsicon,.geminiicon,.appmenuicon,.accounticon{
+    opacity: 0.6;
+    padding: 5px;
+    cursor: pointer;
+}
+.contactsupporticon:hover,.settingsicon:hover,.geminiicon:hover,.appmenuicon:hover,.accounticon:hover{
+    background-color: rgb(201, 201, 202);
+    border-radius: 50%;
+}
