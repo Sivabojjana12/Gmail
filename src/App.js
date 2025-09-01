@@ -16,7 +16,7 @@ function App() {
       <Mainnavebar onMenuClick={onMenuClick} />
       <div class="main-container">
         <Sidebar isOpen={isOpen} />
-        <div style={{ flex: 1 }}><Maincontentbody/></div>
+        <div style={{ flex: 1}}><Maincontentbody/></div>
         <Rightsidemenu />
       </div>
     </div>

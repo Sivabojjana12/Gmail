@@ -19,8 +19,8 @@ function Maincontentheader() {
             <div className="leftside">
                 
                 <div className="checkbox-dropdown">
-                    <Checkbox sx={{fontSize:17}}/>
-                    <Select disableUnderline variant="standard" sx={{border: "none","& fieldset": { border: "none" },"&:focus": { outline: "none" }}}>
+                    <Checkbox sx={{fontSize:14}}/>
+                    <Select disableUnderline variant="standard" sx={{border: "none","& fieldset": { border: "none" },"&:focus": { outline: "none" },paddingRight:0}}>
                         <MenuItem value="option1">All</MenuItem>
                         <MenuItem value="option2">None</MenuItem>
                         <MenuItem value="option3">Read</MenuItem>
@@ -30,8 +30,8 @@ function Maincontentheader() {
                     </Select>
                   
                 </div>
-                <RefreshOutlinedIcon sx={{fontSize:17}}/>
-                <MoreVertOutlinedIcon sx={{fontSize:17}}/>
+                <RefreshOutlinedIcon sx={{fontSize:17,opacity:0.7}}/>
+                <MoreVertOutlinedIcon sx={{fontSize:17,opacity:0.7}}/>
             </div>
             <div className="rightside">
                 <GmailStylePagination/>
