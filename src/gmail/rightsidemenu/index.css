@@ -1,5 +1,24 @@
 .rightside-menu{
+    background-color: rgba(253, 253, 253, 0.36);
+    width: 50px;
+}
+.top{
     display: flex;
+    height: 50%;
     flex-direction: column;
-    background-color: rgb(237 240 242 / 36%);
+    justify-content: space-between;
+    /* gap: 30px; */
+    align-items: center;
+    padding: 22px 0;
+}
+.calender-icon,.keep-icon,.tasks-icon,.contacts-icon,.add-icon{
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    
+}
+.calender-icon:hover, .keep-icon:hover, .tasks-icon:hover, .contacts-icon:hover, .add-icon:hover{
+    background-color: rgba(157, 157, 157, 0.36);
+    border-radius: 50%;
+    
 }

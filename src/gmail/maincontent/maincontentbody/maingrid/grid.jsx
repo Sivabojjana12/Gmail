@@ -3,7 +3,42 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
+import { styled } from "@mui/material/styles";
 import InboxOutlinedIcon from '@mui/icons-material/InboxOutlined';
+import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
+import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+
+
+
+const CustomTab = styled((props) => <Tab disableRipple {...props} />)(
+  ({ theme }) => ({
+    display: "flex",
+    flexDirection: "row",
+    gap: "10px",
+    alignItems:"start",
+    justifyContent: "flex-start",
+    fontSize: "14px",
+    textTransform: "none",
+    minHeight: 52,
+    minWidth: 150,
+    color: "gray",
+    "&.Mui-selected": {
+      color: "blue",
+    //   backgroundColor: "#f0f6ff",
+      borderRadius: "8px",
+    },
+     "&:hover": {
+      backgroundColor: "#f5f5f5", 
+      color: "black",                       
+    },
+    "& .MuiTab-iconWrapper": {
+      fontSize: "16px",
+      marginRight: "9px",  
+    },
+  })
+);
+
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -16,7 +51,7 @@ function CustomTabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+      {value === index && <Box sx={{ p: 4 }}>{children}</Box>}
     </div>
   );
 }
@@ -44,14 +79,15 @@ function BasicTabs() {
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab icon={<InboxOutlinedIcon sx={{fontSize:'20px'}}/>}label="Primary" {...a11yProps(0)}  sx={{display: 'flex',flexDirection: 'Row',gap : '20px', alignItems: 'center',textAlign:'match-parent',fontSize: '14px',textTransform: 'none', minHeight: 72,minWidth: 100,color: 'gray','&.Mui-selected': {color: 'blue',},}}/>
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+        <Tabs className='grid-tabs'value={value} onChange={handleChange} aria-label="basic tabs example" variant='fullWidth'>
+          <CustomTab className="inboxoutlined" icon={<InboxOutlinedIcon sx={{fontSize:'20px'}}/>}label="Primary" {...a11yProps(0)}  />
+          <CustomTab icon={<LocalOfferOutlinedIcon sx={{fontSize:'20px'}}/>}label="Promotion" {...a11yProps(1)} />
+          <CustomTab icon={<GroupOutlinedIcon sx={{fontSize:'20px'}}/>}label="Social" {...a11yProps(2)} />
+          <CustomTab icon={<InfoOutlinedIcon sx={{fontSize:'20px'}}/>}label="Updates" {...a11yProps(2)} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        Item One
+        
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         Item Two
