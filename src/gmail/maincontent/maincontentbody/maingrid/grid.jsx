@@ -8,6 +8,10 @@ import InboxOutlinedIcon from '@mui/icons-material/InboxOutlined';
 import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
 import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import EmailList from "../primarymessages/primarymessage.jsx"
+import PromotionList from '../promotionmessgaes/promotion.jsx';
+import SocialList from '../social';
+import UpdatesList from '../updates/index.jsx'; 
 
 
 
@@ -51,7 +55,7 @@ function CustomTabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && <Box sx={{ p: 4 }}>{children}</Box>}
+      {value === index && <Box>{children}</Box>}
     </div>
   );
 }
@@ -77,23 +81,26 @@ function BasicTabs() {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box className="maingrid"sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs className='grid-tabs'value={value} onChange={handleChange} aria-label="basic tabs example" variant='fullWidth'>
           <CustomTab className="inboxoutlined" icon={<InboxOutlinedIcon sx={{fontSize:'20px'}}/>}label="Primary" {...a11yProps(0)}  />
           <CustomTab icon={<LocalOfferOutlinedIcon sx={{fontSize:'20px'}}/>}label="Promotion" {...a11yProps(1)} />
           <CustomTab icon={<GroupOutlinedIcon sx={{fontSize:'20px'}}/>}label="Social" {...a11yProps(2)} />
-          <CustomTab icon={<InfoOutlinedIcon sx={{fontSize:'20px'}}/>}label="Updates" {...a11yProps(2)} />
+          <CustomTab icon={<InfoOutlinedIcon sx={{fontSize:'20px'}}/>}label="Updates" {...a11yProps(3)} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        
+               <EmailList/> 
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Item Two
+        <PromotionList/>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        Item Three
+        <SocialList/>
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={3}>
+        <UpdatesList/>
       </CustomTabPanel>
     </Box>
   );

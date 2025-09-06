@@ -19,8 +19,8 @@ function Maincontentheader() {
             <div className="leftside">
                 
                 <div className="checkbox-dropdown">
-                    <Checkbox sx={{fontSize:14}}/>
-                    <Select disableUnderline variant="standard" sx={{border: "none","& fieldset": { border: "none" },"&:focus": { outline: "none" },paddingRight:0}}>
+                    <Checkbox sx={{fontSize:10}}/>
+                    <Select disableUnderline variant="standard" sx={{border: "none","& fieldset": { border: "none" },"&:focus": { outline: "none" }}}>
                         <MenuItem value="option1">All</MenuItem>
                         <MenuItem value="option2">None</MenuItem>
                         <MenuItem value="option3">Read</MenuItem>

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link } from "react-router-dom";
 import './index.css';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
@@ -56,7 +57,8 @@ function Sidebar({isOpen}) {
         </Stack>
     
       </div>
-      <List className='sidebar-list'>
+      <List className='sidebar-list' >
+        <Link to="/inbox">
         <Tooltip title="Inbox" placement='right'>
         <ListItemButton>
           <ListItemIcon>
@@ -65,6 +67,9 @@ function Sidebar({isOpen}) {
           <ListItemText primary="Inbox" />
         </ListItemButton>
         </Tooltip>
+        </Link>
+        <Link to="/starred">
+
         <Tooltip title="Starred" placement='right'>
         <ListItemButton>
           <ListItemIcon>
@@ -73,14 +78,17 @@ function Sidebar({isOpen}) {
           <ListItemText primary="Starred" />
         </ListItemButton>
         </Tooltip>
-        <Tooltip title="Snoozed" placement='right'>
-        <ListItemButton>
-          <ListItemIcon>
-            <AccessTimeIcon fontSize='small'/>
-          </ListItemIcon>
-          <ListItemText primary="Snoozed" />
-        </ListItemButton>
-        </Tooltip>
+        </Link>
+        <Link to="/snoozed" >
+          <Tooltip title="Snoozed" placement='right'>
+          <ListItemButton>
+            <ListItemIcon>
+              <AccessTimeIcon fontSize='small'/>
+            </ListItemIcon>
+            <ListItemText primary="Snoozed" />
+          </ListItemButton>
+          </Tooltip>
+        </Link>
 
         <Tooltip title="Sent" placement='right'>
         <ListItemButton>
