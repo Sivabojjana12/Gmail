@@ -1,3 +1,7 @@
 .inboxoutlined{
     padding-left: 0;
 }
+.maingrid{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
