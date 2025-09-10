@@ -5,16 +5,14 @@ import Searchbar from './searchbar';
 import Navbarend from './navbarend';
 import Tooltip from '@mui/material/Tooltip';
 
-function Mainnavebar({onMenuClick}) {
 
-    const handleMenuClick = () => {
-        onMenuClick();
-    };
+function Mainnavebar() {
+
     
     return(
         <div className="navbar">
             <div className="gmailmenu">
-                <div className="menu-icon" onClick={handleMenuClick} >
+                <div className="menu-icon">
                     <Tooltip title="Main menu" placement='bottom'>
                         <MenuIcon id='menuicon'/>
                     </Tooltip>
