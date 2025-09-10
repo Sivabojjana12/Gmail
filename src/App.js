@@ -10,6 +10,8 @@ import Maincontentbody from "./gmail/maincontent/maincontentbody/maincontentbody
   const Starred = ()=> <div>Starred</div>
   const Snoozed = ()=> <div style={{color: 'red'}}>Snoozed</div>
   const Dummy = ()=> <div>dummy</div>
+
+
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const onMenuClick = () => {
@@ -18,16 +20,15 @@ function App() {
        
   return (
      <Router>
-      <div>
+      <div className="app">
         <Mainnavebar onMenuClick={onMenuClick} />
         <div class="main-container">
           <Sidebar isOpen={isOpen} />
           <Routes>
             <Route exact  path="/inbox"  element={<Email />} />  
-            <Route exact  path="/inbox/:id" element={<Email/>} />       {/* Default route */}
-                 {/* Default route */}
-            <Route path="/starred" element={<Starred />} /> {/* About route */}
-            <Route path="/snoozed" element={<Snoozed />} /> {/* Contact route */}
+            <Route exact  path="/inbox/:id" element={<Email/>} /> 
+            <Route path="/starred" element={<Starred />} />
+            <Route path="/snoozed" element={<Snoozed />} /> 
           </Routes>
           <Rightsidemenu />
         </div>
