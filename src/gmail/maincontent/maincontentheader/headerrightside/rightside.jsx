@@ -6,7 +6,7 @@ import  Tooltip from "@mui/material/Tooltip";
 import "./rightside.css"
 
 function GmailStylePagination() {
-  const [page, setPage] = React.useState(0);
+  const [page, setPage] = React.useState(1);
   const rowsPerPage = 10; 
 
   const handleChangePage = (event, newPage) => {

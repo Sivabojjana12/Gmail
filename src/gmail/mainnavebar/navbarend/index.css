@@ -3,12 +3,17 @@
     align-items: center;
     gap: 20px;
 }
-.contactsupporticon,.settingsicon,.geminiicon,.appmenuicon,.accounticon{
+.contactsupporticon,.settingsicon,.geminiicon,.appmenuicon{
     opacity: 0.6;
     padding: 5px;
     cursor: pointer;
 }
-.contactsupporticon:hover,.settingsicon:hover,.geminiicon:hover,.appmenuicon:hover,.accounticon:hover{
+.contactsupporticon:hover,.settingsicon:hover,.geminiicon:hover,.appmenuicon:hover{
     background-color: rgb(201, 201, 202);
     border-radius: 50%;
+}
+.google-apps{
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 400px;
 }
