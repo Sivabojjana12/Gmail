@@ -265,11 +265,8 @@ function Sidebar({ isMenuOpen }) {
             <ListItemIcon sx={{
               "&:hover": {
                 backgroundColor: "#f0f0f0",
-                borderRadius: "16px",
-                cursor: "pointer",
-                paddingRight: "0px"
-              }
-            }}>
+                borderRadius: "13px",
+                cursor: "pointer",}}}>
               <AddIcon fontSize="small" />
             </ListItemIcon>
           </Tooltip>

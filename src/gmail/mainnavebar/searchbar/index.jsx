@@ -48,7 +48,7 @@ function Searchbar() {
             </Tooltip>
             {open && (
                 <div className="form-tool" ref={formRef}>
-                    <form style={{ marginTop: "10px", border: "1px solid #ccc", padding: "20px" }}>
+                    <form style={{ marginTop: "1px", border: "1px solid #ccc", padding: "20px",zIndex:"1000"}}>
                         <Stack spacing={2}>
                             <Stack direction="row" spacing={0} alignItems="center">
                             <Typography sx={{ minWidth: 100,fontSize:"0.7rem" }}>From</Typography>
@@ -78,20 +78,20 @@ function Searchbar() {
                             <Stack direction="row" spacing={0} alignItems="center">
                                 <Typography sx={{ minWidth: 100,fontSize:"0.7rem" }}>Size</Typography>
                                 <Stack direction="row" spacing={1} alignItems="center">
-                                <FormControl variant="standard" sx={{ minWidth: 150 }}>
-                                    <Select defaultValue=" ">
-                                    <MenuItem value="greater">greater than</MenuItem>
-                                    <MenuItem value="less">less than</MenuItem>
-                                    </Select>
-                                </FormControl>
-                                <TextField variant="standard" sx={{ width: 100 }} />
-                                <FormControl variant="standard" sx={{ minWidth: 150 }}>
-                                    <Select defaultValue="mb">
-                                        <MenuItem value="mb">MB</MenuItem>
-                                        <MenuItem value="kb">KB</MenuItem>
-                                        <MenuItem value="bytes">Bytes</MenuItem>
-                                    </Select>
-                                </FormControl>
+                                    <FormControl variant="standard" sx={{ minWidth: 150 }}>
+                                        <Select defaultValue=" ">
+                                        <MenuItem value="greater">greater than</MenuItem>
+                                        <MenuItem value="less">less than</MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                    <TextField variant="standard" sx={{ width: 100 }} />
+                                    <FormControl variant="standard" sx={{ minWidth: 150 }}>
+                                        <Select defaultValue="mb">
+                                            <MenuItem value="mb">MB</MenuItem>
+                                            <MenuItem value="kb">KB</MenuItem>
+                                            <MenuItem value="bytes">Bytes</MenuItem>
+                                        </Select>
+                                    </FormControl>
                                 </Stack>
                             </Stack>
 

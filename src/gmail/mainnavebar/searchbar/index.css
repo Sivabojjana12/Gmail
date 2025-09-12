@@ -39,10 +39,17 @@
     
 }
 .form-tool {
-  position: absolute;
-  top: 75%; 
-  border-radius: 8px;
-  padding: 1px;
-  z-index: 12px; 
-  width: 45%;
+  position: absolute; 
+  top: 100%; 
+  width: 680px;
+  z-index: 1000;       
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  
+}
+
+.search-form {
+  margin-top: 10px;
+  padding: 20px;
 }
