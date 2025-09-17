@@ -1,0 +1,16 @@
+.rightend{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 30px;
+}
+.paginationinfo{
+    opacity: 0.6;
+}
+.inputtools{
+    opacity: 0.7;
+}
+.keyboard-icon:hover,.arrow-icon:hover{
+    background-color: darkgrey;
+    border-radius: 7px;
+}
