@@ -6,7 +6,7 @@ import Navbarend from './navbarend';
 import Tooltip from '@mui/material/Tooltip';
 
 
-function Mainnavebar() {
+function Mainnavebar({openSettings,toggleSidebar}) {
 
     
     return(
@@ -14,7 +14,7 @@ function Mainnavebar() {
             <div className="gmailmenu">
                 <div className="menu-icon">
                     <Tooltip title="Main menu" placement='bottom'>
-                        <MenuIcon id='menuicon'/>
+                        <MenuIcon id='menuicon' onClick={toggleSidebar}/>
                     </Tooltip>
                 </div>
                 <div className="gmail-icon">
@@ -24,7 +24,7 @@ function Mainnavebar() {
                 </div>
             </div>
             <Searchbar/>  
-            <Navbarend/> 
+            <Navbarend openSettings={openSettings}/> 
         </div>
     )
 }

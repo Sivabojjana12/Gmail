@@ -1,7 +1,7 @@
 import React, {useState } from "react";
 import { useParams, useSearchParams  } from "react-router-dom";
 import "./maincontentbody.css";
-import Maincontentheader from "../maincontentheader/maincontentheader";
+import Maincontentheader from './maincontentheader';
 import BasicTabs from "./maingrid/grid";
 
 const ViewMail = (data) => {
@@ -9,11 +9,17 @@ const ViewMail = (data) => {
 };
 
 function Maincontentbody() {
-  const { id } = useParams();
+  // const { id } = useParams();
 
   const [searchParams, setSearchParams] = useSearchParams();
   
   const [viewMainData, setViewMailData] = useState();
+  const [page, setPage] = useState(0);
+  const rowsPerPage = 10;
+
+  const handlePageChange = (event, newPage) => {
+    setPage(newPage);
+  };
 
 //   useEffect(() => {
 //     console.log("useEffect id", searchParams)
@@ -34,8 +40,8 @@ function Maincontentbody() {
         <ViewMail data={viewMainData} />
       ) : (
         <>
-          <Maincontentheader />
-          <BasicTabs/>
+          <Maincontentheader page={page} rowsPerPage={rowsPerPage} count={100} onPageChange={handlePageChange}/>
+          <BasicTabs page={page}rowsPerPage={rowsPerPage}/>
         </>
       )}
     </div>

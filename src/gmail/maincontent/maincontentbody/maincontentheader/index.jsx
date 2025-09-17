@@ -1,10 +1,11 @@
 import React, { useState,useRef,useEffect } from "react";
+import GmailStylePagination from "./headerrightside";
+import './header.css';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import RefreshOutlinedIcon from '@mui/icons-material/RefreshOutlined';
-import "./index.css"
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
-import GmailStylePagination from "./headerrightside/rightside";
+
 import Checkbox from '@mui/material/Checkbox';
 import MarkEmailReadIcon from "@mui/icons-material/MarkEmailRead";
 import { Tooltip } from "@mui/material";
@@ -14,7 +15,7 @@ import { Tooltip } from "@mui/material";
 
 
 
-function Maincontentheader() {
+function Maincontentheader({ page, rowsPerPage, count, onPageChange}) {
     const [open, setOpen] = useState(false);
     const menuRef = useRef();
 
@@ -92,9 +93,7 @@ function Maincontentheader() {
                 </div>
             </div>
             <div className="rightside">
-                <button onClick={handleToggle} style={{ border: "none", background: "transparent", fontSize: "20px", cursor: "pointer",padding: "4px 8px",}}>
-                    <GmailStylePagination/>
-                </button>
+                <GmailStylePagination page={page}rowsPerPage={rowsPerPage}count={count} onPageChange={onPageChange}/>
             </div>
                 
                 

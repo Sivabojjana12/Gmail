@@ -1,78 +1,77 @@
-import React, { useState } from "react";
-import { Drawer, IconButton, Typography, Divider, Radio, Button } from "@mui/material";
-import SettingsIcon from "@mui/icons-material/Settings";
+import React from "react";
+import './index.css'
+import {
+  Box,
+  Button,
+  Typography,
+  IconButton,
+  Divider,
+  Radio,
+  RadioGroup,
+  FormControlLabel,} from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
- function QuickSettingsDrawer() {
-  const [open, setOpen] = useState(false);
 
-  const toggleDrawer = (state) => () => {
-    setOpen(state);
-  };
 
+
+const QuickSettings=()=> {
   return (
-    <div>
-      
-      <IconButton onClick={toggleDrawer(true)}>
-        <SettingsIcon />
-      </IconButton>
+     <div className="panel">
+      {/* Header */}
+      <div className="panel-header">
+        <h2>Quick settings</h2>
+        <button className="close-btn">✖</button>
+      </div>
 
-      
-      <Drawer
-        anchor="right"
-        open={open}
-        onClose={toggleDrawer(false)}
-        PaperProps={{
-          sx: { width: 360, p: 2 }, 
-        }}
-      >
-        
-        <Typography variant="h6" sx={{ mb: 2 }}>
-          Quick settings
-        </Typography>
-        <Button variant="outlined" fullWidth sx={{ mb: 2 }}>
-          See all settings
-        </Button>
+      {/* See all settings */}
+      <button className="btn-full">See all settings</button>
 
-        <Divider />
-
-        
-        <Typography variant="subtitle2" sx={{ mt: 2, mb: 1 }}>
-          Apps in Gmail
-        </Typography>
-        <Button size="small">Customize</Button>
-
-        <Divider sx={{ my: 2 }} />
-
-       
-        <Typography variant="subtitle2">Density</Typography>
-        <div>
-          <Radio checked /> Default
+      {/* Apps in Gmail */}
+      <div className="section">
+        <h3>Apps in Gmail</h3>
+        <div className="section-row">
+          <span>Chat and Meet</span>
+          <button className="link">Customize</button>
         </div>
-        <div>
-          <Radio /> Comfortable
+      </div>
+
+      {/* Density */}
+      <div className="section">
+        <h3>Density</h3>
+        <div className="radio-group">
+          <label>
+            <input type="radio" name="density" defaultChecked /> Default
+          </label>
+          <label>
+            <input type="radio" name="density" /> Comfortable
+          </label>
+          <label>
+            <input type="radio" name="density" /> Compact
+          </label>
         </div>
-        <div>
-          <Radio /> Compact
+      </div>
+
+      {/* Theme */}
+      <div className="section">
+        <h3>Theme</h3>
+        <div className="section-row">
+          <div className="theme-preview"></div>
+          <button className="link">View all</button>
         </div>
+      </div>
 
-        <Divider sx={{ my: 2 }} />
-
-        
-        <Typography variant="subtitle2">Theme</Typography>
-        <Button size="small">View all</Button>
-
-        <Divider sx={{ my: 2 }} />
-
-     
-        <Typography variant="subtitle2">Inbox type</Typography>
-        <div>
-          <Radio checked /> Default
+      {/* Inbox type */}
+      <div className="section">
+        <h3>Inbox type</h3>
+        <div className="section-row">
+          <label>
+            <input type="radio" name="inbox" defaultChecked /> Default
+          </label>
+          <button className="link">Customize</button>
         </div>
-        <Button size="small">Customize</Button>
-      </Drawer>
+      </div>
     </div>
   );
 }
 
-
-export default QuickSettingsDrawer;
+export default QuickSettings;
