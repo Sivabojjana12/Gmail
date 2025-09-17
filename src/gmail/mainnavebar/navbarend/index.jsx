@@ -9,10 +9,6 @@ import AppsRoundedIcon from '@mui/icons-material/AppsRounded';
 import Tooltip from '@mui/material/Tooltip'; 
 import {Menu, MenuItem,Button, Divider } from "@mui/material";
 
-
-
-
-function Navbarend(){
     const apps = [
         { name: "Account", icon: "https://img.icons8.com/color/48/user-male-circle--v1.png" },
         { name: "Drive", icon: "https://img.icons8.com/color/48/google-drive--v1.png" },
@@ -57,6 +53,11 @@ function Navbarend(){
         { name: "Tasks", icon: "data:image/png;base64,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" },
 
     ];
+
+
+
+function Navbarend({openSettings}){
+
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -80,6 +81,9 @@ function Navbarend(){
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+  const openSettingsHandler=()=>{
+    openSettings()
+  }
     return(
       <div className="navbarend">
         <Tooltip title="Support" placement='bottom'>
@@ -92,10 +96,10 @@ function Navbarend(){
             <MenuItem >Send feedback to Google</MenuItem>
         </Menu>
         <div>        
-          {/* <Tooltip title="Settings" placement='bottom'>
-            <SettingsOutlinedIcon className='settingsicon'/>
-          </Tooltip> */}
-          <QuickSettingsDrawer/>
+          <Tooltip title="Settings" placement='bottom'>
+            <SettingsOutlinedIcon className='settingsicon' onClick={openSettingsHandler}/>
+          </Tooltip>
+          {/* <QuickSettingsDrawer/> */}
         </div>
 
         <Tooltip title="Try Gemini" placement='bottom'>

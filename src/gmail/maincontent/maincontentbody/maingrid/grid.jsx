@@ -13,7 +13,7 @@ import EmailList from "../primarymessages/primarymessage.jsx"
 import PromotionList from '../promotionmessgaes/promotion.jsx';
 import SocialList from '../social';
 import UpdatesList from '../updates/index.jsx'; 
-import { Padding } from '@mui/icons-material';
+
 
 
 
@@ -76,7 +76,7 @@ function a11yProps(index) {
   };
 }
 
-function BasicTabs() {
+function BasicTabs({ page, rowsPerPage }) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -94,16 +94,16 @@ function BasicTabs() {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-               <EmailList/> 
+        <EmailList page={page} rowsPerPage={rowsPerPage}/> 
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <PromotionList/>
+        <PromotionList page={page} rowsPerPage={rowsPerPage}/>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <SocialList/>
+        <SocialList page={page} rowsPerPage={rowsPerPage}/>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        <UpdatesList/>
+        <UpdatesList page={page} rowsPerPage={rowsPerPage}/>
       </CustomTabPanel>
     </Box>
   );

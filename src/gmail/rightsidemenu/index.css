@@ -1,4 +1,7 @@
 .rightside-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: rgba(253, 253, 253, 0.36);
     width: 50px;
 }
@@ -21,4 +24,13 @@
     background-color: rgba(157, 157, 157, 0.36);
     border-radius: 50%;
     
+}
+.bottom{
+    cursor: pointer;
+    padding: 12px;
+}
+.bottom:hover{
+    background-color: rgb(233, 232, 232);
+    border-radius: 50%;
+    width: fit-content;
 }

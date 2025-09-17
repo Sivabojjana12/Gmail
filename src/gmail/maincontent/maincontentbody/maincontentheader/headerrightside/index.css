@@ -10,3 +10,7 @@
 .inputtools{
     opacity: 0.7;
 }
+.keyboard-icon:hover,.arrow-icon:hover{
+    background-color: darkgrey;
+    border-radius: 7px;
+}

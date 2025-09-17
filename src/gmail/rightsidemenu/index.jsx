@@ -1,13 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import AddIcon from '@mui/icons-material/Add';
 import Tooltip from '@mui/material/Tooltip';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import './index.css';
 
 
 
 function Rightsidemenu() {
+  const [open,setOpen]= useState(true);
+  const toggle=()=>{
+    setOpen(!open);
+  }
   return (
-    <div className='rightside-menu'>
+    
+    <div className={`rightside-menu ${open ? "open" : "closed"}`}>
+      {open &&(
       <div class="top">
         <Tooltip title="Google Calendar" placement="bottom">
           <img className="calender-icon"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfZRzn2OpNq-OaU1QGcrCL9HDxi6k-4HXAyg&s" alt='calender'/>
@@ -26,8 +34,9 @@ function Rightsidemenu() {
           <AddIcon className='add-icon'/>
         </Tooltip>
       </div>
-      <div class="bottom">
-          
+      )}
+      <div className="bottom" onClick={toggle}> 
+        {open? <ChevronLeftIcon/> : <ChevronRightIcon/>} 
       </div>
     </div>
   );
