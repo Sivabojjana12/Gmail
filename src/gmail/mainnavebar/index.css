@@ -1,26 +1,26 @@
 .navbar{
     width: 100%;
-    background-color: rgb(237 240 242 / 36%);
-    padding: 8px;
-    position: relative;
-    height: 60px;
+    /* background-color: #f0f0f2; */
+    padding: 7px 10px;
+    /* position: relative; */
+    /* height: 60px; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
 }
 .gmailmenu{
-    width: 238px;
     display: flex;
     align-items: center;
     gap: 15px;
-    padding-left: 9px;
+    padding: 15px 0px 0px 13px;
 }
 #menuicon{
-    padding: 5px;
+    padding: 6px;
     cursor: pointer;
 }
 #menuicon:hover{
     background-color: rgb(201, 201, 202);
     border-radius: 50%;
+    /* padding: 13px; */
 }

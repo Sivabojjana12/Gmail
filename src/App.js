@@ -12,7 +12,7 @@ import QuickSettings from "./gmail/mainnavebar/navbarend/settingsdrawer";
   const Email =()=>( <div style={{ flex: 1}}><Maincontent/></div>)
   const Starred = ()=> <div>Starred</div>
   const Snoozed = ()=> <div style={{color: 'red'}}>Snoozed</div>
-  // const Dummy = ()=> <div>dummy</div>
+
 
 
 function App() {
@@ -40,9 +40,6 @@ function App() {
                 <QuickSettings/>
               </div>
           }
-          <div>
-
-          </div>
           <Rightsidemenu />
         </div>
         

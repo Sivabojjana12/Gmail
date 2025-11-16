@@ -14,16 +14,17 @@ function Mainnavebar({openSettings,toggleSidebar}) {
             <div className="gmailmenu">
                 <div className="menu-icon">
                     <Tooltip title="Main menu" placement='bottom'>
-                        <MenuIcon id='menuicon' onClick={toggleSidebar}/>
+                        <MenuIcon id='menuicon' onClick={toggleSidebar} sx={{ fontSize: 28 }}/>
                     </Tooltip>
                 </div>
                 <div className="gmail-icon">
                     <Tooltip title="Gmail" placement='bottom'>
-                    <img className="gb_Pd" srcset="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png"  alt="" aria-hidden="true" role="presentation"></img>
+                    <img className="gb_Pd" width='140px' srcset="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png"  alt="" aria-hidden="true" role="presentation"></img>
                     </Tooltip>
                 </div>
+                
             </div>
-            <Searchbar/>  
+             <Searchbar/> 
             <Navbarend openSettings={openSettings}/> 
         </div>
     )
