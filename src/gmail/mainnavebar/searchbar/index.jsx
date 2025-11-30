@@ -14,6 +14,9 @@ import {FormControl,Select,Checkbox,FormControlLabel,Button,MenuItem,Typography,
 function Searchbar() {
   const [open, setOpen] = useState(false);
   const formRef = useRef(null);
+   const [query, setQuery] = useState("");
+   const [focused, setFocused] = useState(false);
+
 
   const toggle = () => {
     setOpen((prev) => !prev);
@@ -37,12 +40,29 @@ function Searchbar() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [open]);
+
     return(
-        <div className="searchbar">
+        <div className={`searchbar ${focused ? "active" : ""}`}>
             <Tooltip title="Search" placement='bottom'>
                 <SearchIcon className="search-icon"/>
             </Tooltip>
-                <input class="search-input" aria-label="Search mail" autocomplete="off" placeholder="Search mail" value="" name="q" type="text" dir="ltr" spellcheck="false" aria-haspopup="true" aria-live="off" aria-owns="gs_sbt50"  jslog="72933; u014N:xr6bB; 41:W251bGwsbnVsbCxudWxsLG51bGwsW251bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXV0." aria-hidden="false"></input>  
+            <input
+                className="search-input"
+                aria-label="Search mail"
+                autoComplete="off"
+                placeholder="Search mail"
+                value={query}
+                name="q"
+                type="text"
+                dir="ltr"
+                spellCheck={false}
+                aria-haspopup="true"
+                aria-live="off"
+                aria-owns="gs_sbt50"
+                onChange={(e) => setQuery(e.target.value)}
+                onFocus={() => setFocused(true)}
+                onBlur={() => setFocused(false)}
+            />  
             <Tooltip title="show Search options" placement='bottom'>              
                 <TuneIcon className='tool-icon' onClick={toggle}/>
             </Tooltip>

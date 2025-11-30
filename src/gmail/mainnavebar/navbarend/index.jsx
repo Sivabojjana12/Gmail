@@ -3,11 +3,11 @@ import './index.css';
 import Googleaccount from './googleaccount';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import QuickSettingsDrawer from './settingsdrawer';
+// import QuickSettingsDrawer from './settingsdrawer';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import AppsRoundedIcon from '@mui/icons-material/AppsRounded';
 import Tooltip from '@mui/material/Tooltip'; 
-import {Menu, MenuItem,Button, Divider } from "@mui/material";
+import {Menu, MenuItem,Button, Divider, Snackbar } from "@mui/material";
 
     const apps = [
         { name: "Account", icon: "https://img.icons8.com/color/48/user-male-circle--v1.png" },
@@ -84,26 +84,52 @@ function Navbarend({openSettings}){
   const openSettingsHandler=()=>{
     openSettings()
   }
+  // help snackbar state + timer
+  const [helpOpen, setHelpOpen] = useState(false);
+  const helpTimerRef = useRef(null);
+
+  const handleHelpClick = () => {
+    handleClose();
+    setHelpOpen(true);
+    if (helpTimerRef.current) clearTimeout(helpTimerRef.current);
+    helpTimerRef.current = setTimeout(() => {
+      setHelpOpen(false);
+      
+    }, 2000);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (helpTimerRef.current) clearTimeout(helpTimerRef.current);
+    };
+  }, []);
     return(
       <div className="navbarend">
         <Tooltip title="Support" placement='bottom'>
-            <HelpOutlineOutlinedIcon className='contactsupporticon' variant="contained" onClick={handleClick}/>
+            <HelpOutlineOutlinedIcon className='contactsupporticon' variant="contained" onClick={handleClick} />
         </Tooltip>
         <Menu anchorEl={anchorEl} open={open} onClose={handleClose} anchorOrigin={{ vertical: "bottom", horizontal: "right" }} transformOrigin={{ vertical: "top", horizontal: "right" }}>
-            <MenuItem>Help</MenuItem>
+            <MenuItem onClick={handleHelpClick}>Help</MenuItem>
             <MenuItem>Training</MenuItem>
             <Divider/>
             <MenuItem >Send feedback to Google</MenuItem>
         </Menu>
+        <Snackbar
+          open={helpOpen}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+          message="Opening settings..."
+          autoHideDuration={2000}
+          onClose={() => setHelpOpen(false)}
+        />
         <div>        
           <Tooltip title="Settings" placement='bottom'>
-            <SettingsOutlinedIcon className='settingsicon' onClick={openSettingsHandler}/>
+            <SettingsOutlinedIcon className='settingsicon' onClick={openSettingsHandler} />
           </Tooltip>
           {/* <QuickSettingsDrawer/> */}
         </div>
 
         <Tooltip title="Try Gemini" placement='bottom'>
-            <AutoAwesomeIcon className='geminiicon'/>
+            <AutoAwesomeIcon className='geminiicon' />
         </Tooltip>
         <div ref={menuRef}>
             <Tooltip title="Google apps" placement='bottom'>
